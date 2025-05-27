@@ -1,4 +1,4 @@
-version: '3'
+version: 2.35.1
 
 services:
 
@@ -48,20 +48,20 @@ services:
     expose: 
     - "9000"
 
-  volumes:
-    wordpress:
-      driver: local
-      driver_opts:
-      type: 'none'
-      o: 'bind
-      device: '/Users/login/data/wordpress'
-      mariadb:
-      driver: local
-      driver_opts:
-      type: 'none' 
-      o: 'bind'
-      device: '/Users/login/data/mariadb'
+volumes:
+  wordpress:
+    driver: local
+    driver_opts:
+    type: 'none'
+    o: 'bind'
+    device: '/Users/bsafi/data/wordpress'
+  mariadb:
+    driver: local
+    driver_opts:
+    type: 'none' 
+    o: 'bind'
+    device: '/Users/bsafi/data/mariadb'
 
-  networks:
-    inception:
-    driver: bridge
+networks:
+  inception:
+  driver: bridge
