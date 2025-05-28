@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:bullseye
 RUN apt update -y && apt upgrade -y
 RUN apt-get -y install wget\
     php7.3\
