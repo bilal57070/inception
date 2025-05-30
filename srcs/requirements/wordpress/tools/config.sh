@@ -22,7 +22,8 @@ if ! wp core is-installed 2>/dev/null; then
 fi
 
 if ! wp user exists 2 --allow-root 2>/dev/null; then
-	wp user create --user_login=$USER_NAME \
+	wp user create --allow-root \
+		--user_login=$USER_NAME \
 		--user_password=$USER_PASSWORD \
 		--user_email=$USER_EMAIL \
 		--path='/var/www/wordpress'
