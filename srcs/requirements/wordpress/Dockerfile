@@ -7,6 +7,8 @@ RUN apt-get -y install wget\
     php7.4-mysql\
     mariadb-client
 
+RUN sed -i 's|^listen = .*|listen = 9000|' /etc/php/7.4/fpm/pool.d/www.conf
+
 RUN mkdir -p /run/php && chown www-data:www-data /run/php
 
 RUN wget https://fr.wordpress.org/wordpress-6.0-fr_FR.tar.gz -P /var/www
