@@ -29,5 +29,7 @@ if ! wp user exists 2 --allow-root 2>/dev/null; then
 		--path='/var/www/wordpress'
 fi
 
+wp option update home "http://localhost" --path=/var/www/wordpress --allow-root
+wp option update siteurl "http://localhost" --path=/var/www/wordpress --allow-root
 
 /usr/sbin/php-fpm7.4 -F
