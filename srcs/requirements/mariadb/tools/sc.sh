@@ -13,6 +13,9 @@ while true; do
     sleep 1
 done
 
+mysql -u root -p${DB_ROOT_PASSWD} <<EOSQL
+EOSQL
+
 if [ -n "$SQL_DATABASE" ]; then
     echo "Checking if $SQL_DATABASE already exists"
     mysql -u root -e "CREATE DATABASE IF NOT EXISTS $SQL_DATABASE;"
