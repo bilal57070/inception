@@ -13,7 +13,8 @@ while true; do
     sleep 1
 done
 
-mysql -u root -p${DB_ROOT_PASSWD} <<EOSQL
+mysql -u root -p${SQL_ROOT_PASSWORD} <<EOSQL
+ALTER USER 'root'@'localhost' IDENTIFIED BY '${SQL_ROOT_PASSWORD}';
 EOSQL
 
 if [ -n "$SQL_DATABASE" ]; then
